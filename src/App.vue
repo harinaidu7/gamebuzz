@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <Home/>
+    <TopStories/>
     <router-view/>
   </div>
 </template>
+
+<script>
+import Home from './components/home.vue';
+import TopStories from './components/topStories.vue';
+ export default {
+    name: "app",
+    components: { Home, TopStories }
+}
+</script>
 
 <style>
 #app {
@@ -28,5 +35,8 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+body{
+  margin: 0%
 }
 </style>
