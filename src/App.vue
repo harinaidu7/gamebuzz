@@ -1,21 +1,27 @@
 <template>
   <div id="app">
-    <Home/>
-    <TopStories/>
+    <Nav/>
+    
+    <!-- <TopStories/><br>
+    <Featured/> -->
     <router-view/>
   </div>
 </template>
 
 <script>
-import Home from './components/home.vue';
-import TopStories from './components/topStories.vue';
+import Nav from './components/Nav.vue';
+
+// import TopStories from './components/TopStories.vue';
+// import Featured from './components/Featured.vue';
  export default {
     name: "app",
-    components: { Home, TopStories }
+    components: {
+    Nav
+}
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
