@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Nav/>
+    <Loader/>
     
     <!-- <TopStories/><br>
     <Featured/> -->
@@ -10,13 +11,15 @@
 
 <script>
 import Nav from './components/Nav.vue';
+import Loader from './components/loader.vue';
 
 // import TopStories from './components/TopStories.vue';
 // import Featured from './components/Featured.vue';
  export default {
     name: "app",
     components: {
-    Nav
+    Nav,
+    Loader
 }
 }
 </script>

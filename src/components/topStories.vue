@@ -1,6 +1,11 @@
 <template>
     <div>
-            <div class="top-stories-header" style="background:#333; color:#fff">
+      <div>
+        <div class="lds-ring" v-if="loading"><div></div><div></div><div></div><div></div></div>
+      </div>
+
+
+            <div v-if="!loading" class="top-stories-header" style="background:#333; color:#fff">
                 <h2>Top Stories</h2>
             </div>
             <div class="container-fluid top-stories-main">
@@ -36,13 +41,14 @@
     </div>
 </template>
 
-<script>
+<script>  
 import axios from "axios";
 export default {
   name: "TopStories",
   data() {
     return {
       topStories: [],
+      loading: false
     };
   },
   mounted() {
@@ -51,6 +57,7 @@ export default {
 
   methods: {
     async getData() {
+      this.loading = true
       let result = await axios.get(
         "https://livescore6.p.rapidapi.com/news/v2/list",
         {
@@ -74,6 +81,7 @@ export default {
       this.topStories = result.data.topStories;
       this.featuredArticles = result.data.featuredArticles;
       this.categories = result.data.categories;
+      this.loading = false; 
     },
   },
 };
@@ -106,5 +114,40 @@ div.gallery img {
 .decs {
   padding: 15px;
   text-align: center;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid rgb(12, 4, 4);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(7, 3, 3) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
