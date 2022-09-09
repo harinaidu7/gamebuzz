@@ -8,8 +8,9 @@
         </div>
 
         <TopStories/>
-        <Featured/>
-        <Categories/>
+        <!-- <Featured/> -->
+        <!-- <Categories/> -->
+  
         
     </div>
 </template>

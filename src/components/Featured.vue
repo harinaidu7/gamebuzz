@@ -1,29 +1,29 @@
-<template>
+<!-- <template>
     <div>
             <div style="background:#333; color:#fff">
                 <h2>Featured</h2>
-            </div>
+            </div> -->
 
             <!-- <div class="top-stories-header" >
                 <h2>Top Stories</h2>
             </div> -->
-            <div class="container-fluid top-stories-main">
+            <!-- <div class="container-fluid top-stories-main">
                 <div class="row">
-                    <div class="col-3" v-for="data in featuredArticles" :key="data.id">
+                    <div class="col-3" v-for="data in featuredArticles" :key="data.id"> -->
                         <!-- <div class="col-3 gallery" v-for="list in topStories" v-bind:key="list.id"> -->
 
-                        <div>
+                        <!-- <div> -->
                             <!-- <a :href="`https://www.livescore.com/`+data.url"> -->
-                                <img :src="data.mainMedia.thumbnail.url"/>
+                                <!-- <img :src="data.mainMedia.thumbnail.url"/> -->
                             <!-- </a>   -->
-                            <div class="decs">
+                            <!-- <div class="decs">
                                 {{data.title}}
                             </div>          
                         </div>
                     </div>
 
                 </div>
-            </div>
+            </div> -->
 
 
 
@@ -35,7 +35,7 @@
                         <div class="decs">{{data.title}}</div>
                     </div>
                 </div>   -->
-    </div>
+    <!-- </div>
 </template>
 
 <script>
@@ -62,9 +62,9 @@ export default {
             "X-RapidAPI-Host": "livescore6.p.rapidapi.com",
           },
         }
-      );
+      ); -->
 
-        // axios
+        <!-- // axios
         //   .request(options)
         //   .then(function(response) {
         //     console.log(response.data);
@@ -109,4 +109,4 @@ export default {
       }
       
 
-</style>
+</style> -->

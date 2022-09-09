@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import TopStories from '../components/TopStories.vue'
-import Featured from '../components/Featured.vue'
-import Categories from '../components/Categories.vue'
+// import Featured from '../components/Featured.vue'
+// import Categories from '../components/Categories.vue'
 import Select from '../components/Select.vue'
 import About from '../components/About.vue'
 import Contact from '../components/Contact.vue'
@@ -20,16 +20,16 @@ const routes = [
     name:'TopStories',
     component: TopStories
   },
-  {
-    path:'/featuredstories',
-    name:'Featured',
-    component: Featured
-  },
-  {
-    path:'/categories',
-    name:'Categories',
-    component: Categories
-  },
+  // {
+  //   path:'/featuredstories',
+  //   name:'Featured',
+  //   component: Featured
+  // },
+  // {
+  //   path:'/categories',
+  //   name:'Categories',
+  //   component: Categories
+  // },
   {
     path:'/select/:id',
     name:'Select',

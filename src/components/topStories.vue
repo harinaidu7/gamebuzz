@@ -26,6 +26,63 @@
                 </div>
             </div>
 
+            <!-- featured stories -->
+          <div v-if="!loading" style="background:#333; color:#fff">
+              <h2>Featured</h2>
+          </div>
+
+           <div class="container-fluid top-stories-main">
+            <div class="row">
+                <div class="col-3" v-for="data in featuredArticles" :key="data.id">
+                    <!-- <div class="col-3 gallery" v-for="list in topStories" v-bind:key="list.id"> -->
+
+                    <div>
+                        <!-- <a :href="`https://www.livescore.com/`+data.url"> -->
+                            <img :src="data.mainMedia.thumbnail.url"/>
+                        <!-- </a>   -->
+                        <div class="decs">
+                            {{data.title}}
+                        </div>          
+                    </div>
+                 </div>
+
+            </div>
+           </div>
+
+           <!-- categories -->
+
+          <div v-if="!loading" style="background:#333; color:#fff">
+            <h2>Categories</h2>
+          </div>
+
+          <div class="container-fluid top-stories-main">
+            <div class="row">
+                <div class="col-3" v-for="types in categories" :key="types.id">
+                    <!-- <div class="col-3 gallery" v-for="list in topStories" v-bind:key="list.id"> -->
+
+                    <div>
+                        <!-- <a :href="`https://www.livescore.com/`+types.url">
+                            <img :src="types.mainMedia.thumbnail.url"/>
+                        </a>   -->
+                        <div class="decs">
+                            <a :href=" `/select/`+ types.id " >
+                                <!-- <div v-for="opt in categoriesList" :key="opt.id">
+                                    <div>{{Opt.id}}</div>
+                                </div> -->
+                               <img src='../assets/load.png' style="height:200px; width:180px"/>
+                               <div>{{types.title}}</div> 
+                            </a>
+                        </div>          
+                    </div>
+                </div>
+
+            </div>
+          </div>
+
+
+
+
+
 
             <!-- <div class="gallery" v-for="list in topStories" v-bind:key="list.id">
                 <div>
@@ -48,6 +105,9 @@ export default {
   data() {
     return {
       topStories: [],
+      featuredArticles: [],
+      categories: [],
+      categoriesList:[],
       loading: false
     };
   },
@@ -128,7 +188,7 @@ div.gallery img {
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid rgb(12, 4, 4);
+  border: 8px solid rgb(255, 255, 255);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: rgb(7, 3, 3) transparent transparent transparent;

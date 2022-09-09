@@ -2,9 +2,10 @@
     <div>
         <div id="nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/about">About Us</router-link></li>
+                <li><router-link to="/contact">Contact</router-link></li>
+                <li></li>
             </ul>
         </div>
         
