@@ -65,7 +65,7 @@
                             <img :src="types.mainMedia.thumbnail.url"/>
                         </a>   -->
                         <div class="decs">
-                            <a :href=" `/select/`+ types.id " >
+                            <a :href=" `/select/`+ types.id +`/` + `1`" >
                                 <!-- <div v-for="opt in categoriesList" :key="opt.id">
                                     <div>{{Opt.id}}</div>
                                 </div> -->

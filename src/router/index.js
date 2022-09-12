@@ -31,7 +31,7 @@ const routes = [
   //   component: Categories
   // },
   {
-    path:'/select/:id',
+    path:'/select/:id/:page/',
     name:'Select',
     component:Select
   },

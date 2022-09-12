@@ -36,19 +36,19 @@
           <nav class="pagination" aria-label="...">
               <ul class="pagination">
                   <li class="page-item">
-                      <a class="page-link" :href=" `/categories/` + this.id + '/' + this.pageNum" @click="previous">Previous</a>
+                      <a class="page-link" :href=" `/select/` + this.id + '/' + this.pageNum" @click="previous">Previous</a>
                   </li>
                   <li class="page-item">
-                      <a class="page-link" :href=" `/categories/` + this.id + '/' + '1'">1</a>
+                      <a class="page-link" :href=" `/select/` + this.id + '/' + '1'">1</a>
                   </li>
                   <li class="page-item">
-                      <a class="page-link" :href=" `/categories/` + this.id + '/' + '2'">2</a>
+                      <a class="page-link" :href=" `/select/` + this.id + '/' + '2'">2</a>
                   </li>
                   <li class="page-item">
-                      <a class="page-link" :href=" `/categories/` + this.id + '/' + '3'">3</a>
+                      <a class="page-link" :href=" `/select/` + this.id + '/' + '3'">3</a>
                   </li>
                   <li class="page-item">
-                      <a class="page-link" :href=" `/categories/` + this.id + '/' + this.pageNum" @click="next">Next</a>
+                      <a class="page-link" :href=" `/select/` + this.id + '/' + this.pageNum" @click="next">Next</a>
                   </li>
               </ul>
           </nav>
@@ -94,7 +94,8 @@ export default {
     },
   async mounted() {
     this.loading = true
-     var id1 = this.$route.params.id;
+     var id1 = (this.$route.params.id).toString()
+     var page1 = (this.$route.params.page).toString()
      var result = await axios.get(
       "https://livescore6.p.rapidapi.com/news/v2/list-by-sport",
       {
