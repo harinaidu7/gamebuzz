@@ -69,7 +69,7 @@
                                 <!-- <div v-for="opt in categoriesList" :key="opt.id">
                                     <div>{{Opt.id}}</div>
                                 </div> -->
-                               <img src='../assets/load.png' style="height:200px; width:180px"/>
+                               <img src='../assets/fallback.jpg' style="height:200px; width:180px"/>
                                <div>{{types.title}}</div> 
                             </a>
                         </div>          
